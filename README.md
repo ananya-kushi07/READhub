@@ -15,9 +15,8 @@ Welcome to ReadHub, your central hub for all your reading needs! Whether you're 
 
 To get started with ReadHub, simply follow these steps:
 
-1. **Clone the Repository**: `git clone https://github.com/yourusername/ReadHub.git`
-2. **Install Dependencies**: `npm install`
-3. **Start the Application**: `npm start`
+1. **Clone the Repository**: `https://github.com/ananya-kushi07/READhub.git`
+2. **Go Live**
 
 ## Contributing
 
