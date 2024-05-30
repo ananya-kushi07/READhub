@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Details</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+  <!-- Header with Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">BookStore</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="books.html">Books</a></li>
+          <li class="nav-item"><a class="nav-link" href="Categories.html">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="Aboutus.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+        <form class="form-inline ml-3">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Book Details -->
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="the past is rising.jpg" class="img-fluid" alt="Book Cover">
+      </div>
+      <div class="col-md-8">
+        <h3>The Past is Rising</h3>
+        <h5>Author: John Doe</h5>
+        <p class="text-muted">Publication Date: January 1, 2024</p>
+        <h4>$19.99</h4>
+        <p>This is a detailed description of the book. It provides an overview of the book's content, themes, and key points. The description is intended to give potential readers a clear idea of what to expect from the book.</p>
+        <button class="btn btn-primary mr-2" onclick="location.href='cart.html';">Add to Cart</button>
+        <button class="btn btn-secondary">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h4>About the Author</h4>
+        <p>John Doe is a renowned author known for his work in the genre. He has written several bestselling novels and has a large following of readers who appreciate his storytelling and writing style.</p>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h4>Reviews</h4>
+        <div class="media mb-4">
+          <!-- <img src="when the body says no.jpg" class="mr-3" alt="User 1" style="width:64px;"> -->
+          <div class="media-body">
+            <h5 class="mt-0">User 1</h5>
+            <p>This book is fantastic! The plot is gripping and the characters are well-developed. Highly recommend!</p>
+          </div>
+        </div>
+        <div class="media mb-4">
+          <!-- <img src="This Side of Paradise.jpg" class="mr-3" alt="User 2" style="width:64px;"> -->
+          <div class="media-body">
+            <h5 class="mt-0">User 2</h5>
+            <p>I couldn't put this book down. The author has done a great job with the storytelling.</p>
+          </div>
+        </div>
+        <div class="media mb-4">
+          <!-- <img src="Brave New World.jpg" class="mr-3" alt="User 3" style="width:64px;"> -->
+          <div class="media-body">
+            <h5 class="mt-0">User 3</h5>
+            <p>An enjoyable read from start to finish. Looking forward to reading more from this author.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-light text-center text-lg-start">
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Footer Content</h5>
+          <p>Here you can use rows and columns to organize your footer content.</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Links</h5>
+          <ul class="list-unstyled mb-0">
+            <li><a href="#!" class="text-dark">Link 1</a></li>
+            <li><a href="#!" class="text-dark">Link 2</a></li>
+            <li><a href="#!" class="text-dark">Link 3</a></li>
+            <li><a href="#!" class="text-dark">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Links</h5>
+          <ul class="list-unstyled mb-0">
+            <li><a href="#!" class="text-dark">Link 1</a></li>
+            <li><a href="#!" class="text-dark">Link 2</a></li>
+            <li><a href="#!" class="text-dark">Link 3</a></li>
+            <li><a href="#!" class="text-dark">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="text-center p-3">
+      © 2023 BookStore:
+      <a class="text-dark" href="#">Privacy Policy</a> |
+      <a class="text-dark" href="#">Terms of Service</a> |
+      <a class="text-dark" href="#">Contact</a>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

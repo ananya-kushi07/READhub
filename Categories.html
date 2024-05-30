@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Categories</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+       
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Book Categories</h1>
+</header>
+
+<br>
+<br>
+
+<!-- Filter Section -->
+<div class="container">
+    <div class="row filter-section">
+      <div class="col-md-4">
+        <!-- Category Filter -->
+        <select class="form-control" id="categoryFilter">
+          <option value="">All Categories</option>
+          <option value="fiction">Fiction</option>
+          <option value="non-fiction">Non-Fiction</option>
+          <option value="romance">Romance</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="mystry">Mystery</option>
+          <!-- Add more categories as needed -->
+        </select>
+      </div>
+      <div class="col-md-4">
+        <!-- Sorting Options -->
+        <select class="form-control" id="sortingOptions">
+          <option value="relevance">Relevance</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="date-new">Publication Date: Newest First</option>
+          <option value="date-old">Publication Date: Oldest First</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Book Cards Section -->
+  <div class="container">
+    <div class="row" id="bookCards">
+      <!-- Book cards will be dynamically added here -->
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    // Sample book data (Replace with your actual book data)
+    const books = [
+      { title: "Rich Dad Poor Dad", category: "fiction", price: 99, publicationDate: "1997" },
+      { title: "The Art OF thinking", category: "non-fiction", price: 79, publicationDate: "7 September 2019" },
+      { title: "Iki Gai", category: "romance", price: 59, publicationDate: "29 August 2017" },
+      { title: "The Adventures of Tom Sawyer", category: "fantasy", price: 199, publicationDate: "June 1876" },
+      { title: "When-it-Rains", category: "mystry", price: 69, publicationDate: "10 October 2013" },
+      // Add more book objects as needed
+    ];
+
+    // Function to render book cards based on filters and sorting
+    function renderBooks(categoryFilter, sortingOption) {
+      let filteredBooks = books;
+
+      // Apply category filter
+      if (categoryFilter) {
+        filteredBooks = filteredBooks.filter(book => book.category === categoryFilter);
+      }
+
+      // Apply sorting
+      switch (sortingOption) {
+        case "price-low":
+          filteredBooks.sort((a, b) => a.price - b.price);
+          break;
+        case "price-high":
+          filteredBooks.sort((a, b) => b.price - a.price);
+          break;
+        case "date-new":
+          filteredBooks.sort((a, b) => new Date(b.publicationDate) - new Date(a.publicationDate));
+          break;
+        case "date-old":
+          filteredBooks.sort((a, b) => new Date(a.publicationDate) - new Date(b.publicationDate));
+          break;
+        // Default is relevance or no sorting
+      }
+
+      // Render book cards
+      const bookCardsContainer = $("#bookCards");
+      bookCardsContainer.empty();
+      filteredBooks.forEach(book => {
+        const card = `
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">${book.title}</h5>
+                <p class="card-text">Category: ${book.category}</p>
+                <p class="card-text">Price: $${book.price}</p>
+                <p class="card-text">Publication Date: ${book.publicationDate}</p>
+              </div>
+            </div>
+          </div>
+        `;
+        bookCardsContainer.append(card);
+      });
+    }
+
+    // Event listeners for filters and sorting options
+    $("#categoryFilter, #sortingOptions").change(function() {
+      const categoryFilter = $("#categoryFilter").val();
+      const sortingOption = $("#sortingOptions").val();
+      renderBooks(categoryFilter, sortingOption);
+    });
+
+    // Initial render
+    renderBooks(null, "relevance");
+  </script>
+
+
+
+
+
+
+</div>
+</body>
+</html>
